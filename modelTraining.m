@@ -107,10 +107,11 @@ figure;
 confusionchart(trueLabels, predictedLabels);
 title('Confusion Matrix - ASL Alphabet');
 
-%% 8. Save Model
+%% 8. (Save Model)
 % [Elango] Saving the trained model and input size to be used during prediction
 fprintf('Saving trained model...\n');
 save('asl_cnn_model.mat', 'aslNet', 'inputSize');
 
 fprintf('Model saved as "asl_cnn_model.mat"\n');
 fprintf('=== Training Done ===\n');
+
