@@ -23,6 +23,20 @@ uilabel(mainFig, ...
     'Position', [100 330 300 50], ...
     'BackgroundColor', [0.1 0.1 0.1]);
 
+% Button: Live Webcam Detection
+makeStyledButton(mainFig, [150 240 200 50], '📷 Live Detection', ...
+    @(btn,event) run_live_webcam_detection_testingv2(aslNet, inputSize));
+
+% Button: Image File Prediction
+makeStyledButton(mainFig, [150 170 200 50], '🖼️ Upload Image File', ...
+    @(btn,event) image_file_prediction(aslNet, inputSize));
+
+% Button: Exit
+makeStyledButton(mainFig, [150 100 200 50], '❌ Exit', ...
+    @(btn,event) close(mainFig));
+
+% Function definitions must be at the end of the file
+
 % Button creation function
 function makeStyledButton(fig, pos, label, callbackFcn)
     btn = uibutton(fig, ...
@@ -39,15 +53,3 @@ function makeStyledButton(fig, pos, label, callbackFcn)
         % Ignore style issues on older MATLAB versions
     end
 end
-
-% Button: Live Webcam Detection
-makeStyledButton(mainFig, [150 240 200 50], '📷 Live Detection', ...
-    @(btn,event) run_live_webcam_detection_testingv2(aslNet, inputSize));
-
-% Button: Image File Prediction
-makeStyledButton(mainFig, [150 170 200 50], '🖼️ Upload Image File', ...
-    @(btn,event) image_file_prediction(aslNet, inputSize));
-
-% Button: Exit
-makeStyledButton(mainFig, [150 100 200 50], '❌ Exit', ...
-    @(btn,event) close(mainFig));
