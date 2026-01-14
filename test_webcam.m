@@ -14,4 +14,5 @@ if exist('aslNet', 'var')
     run_live_webcam_detection_testingv2(aslNet, inputSize);
 else
     error('Model file does not contain "aslNet". Check your .mat file.');
+
 end
