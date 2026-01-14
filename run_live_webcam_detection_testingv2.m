@@ -269,4 +269,5 @@ function run_live_webcam_detection_testingv2(varargin)
             delete(f);
         end
     end
+
 end
